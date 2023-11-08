@@ -1,6 +1,20 @@
 import { createHash } from "crypto-browserify";
 import { API } from "./config";
 
+const getUrl = () => {
+  const origin = window.origin;
+  switch (origin) {
+    case "https://bapber.com":
+      return "https://api-gala.bapber.online";
+    case "https://bapber.online":
+      return "https://api-gala.bapber.online";
+  }
+
+  return "http://14.225.205.222:8000";
+};
+
+const API_URL = getUrl();
+
 export const getAll = (ids) => {
   return new Promise((resolve, reject) => {
     fetch(API + "/data/all")
@@ -46,7 +60,7 @@ export const saveData = (body) => {
 
 export const getListRandomWallet = () => {
   return new Promise((resolve, reject) => {
-    fetch("http://14.225.205.222:8000/")
+    fetch(API_URL)
       .then((res) => res.json())
       .then(resolve)
       .catch(reject);
