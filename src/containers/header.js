@@ -14,26 +14,26 @@ const routes = [
     title: "Home",
     path: "/",
   },
+  // {
+  //   title: "Shared",
+  //   path: "/user/shared",
+  //   isAuth: true,
+  // },
+  // {
+  //   title: "Granted",
+  //   path: "/user/granted",
+  //   isAuth: true,
+  // },
   {
-    title: "Shared",
-    path: "/user/shared",
-    isAuth: true,
+    title: "Random",
+    path: "/user/random",
+    isAuth: false,
   },
-  {
-    title: "Granted",
-    path: "/user/granted",
-    isAuth: true,
-  },
-  {
-    title: "Requested",
-    path: "/user/request",
-    isAuth: true,
-  },
-  {
-    title: "Response",
-    path: "/user/response",
-    isAuth: true,
-  },
+  // {
+  //   title: "Response",
+  //   path: "/user/response",
+  //   isAuth: true,
+  // },
 ];
 
 function Header() {
@@ -47,19 +47,19 @@ function Header() {
     // web3Provider.getNetwork().then((network) => {});
   };
   useEffect(() => {
-    if (walletClient) {
-      initWeb3(walletClient);
-      updateData({ account: walletClient });
-    }
-    if (
-      !walletClient &&
-      routes
-        .filter((i) => i.isAuth)
-        .map((i) => i.path)
-        .includes(window.location.pathname)
-    ) {
-      window.location.href = "/";
-    }
+    // if (walletClient) {
+    //   initWeb3(walletClient);
+    //   updateData({ account: walletClient });
+    // }
+    // if (
+    //   !walletClient &&
+    //   routes
+    //     .filter((i) => i.isAuth)
+    //     .map((i) => i.path)
+    //     .includes(window.location.pathname)
+    // ) {
+    //   window.location.href = "/";
+    // }
   }, [walletClient]);
   console.log(walletClient, "walletClient?");
   return (
@@ -70,7 +70,7 @@ function Header() {
             href="index.html"
             className="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center"
           >
-            <h1 className="m-0 text-primary text-uppercase">MRS</h1>
+            <h1 className="m-0 text-primary text-uppercase">H</h1>
           </a>
         </div>
         <div className="col-lg-9">
@@ -154,7 +154,7 @@ function Header() {
                   {/* <i className="fa fa-arrow-right ms-3" /> */}
                 </div>
               )}
-              {walletClient && (
+              {/* {walletClient && (
                 <div
                   //   href="https://htmlcodex.com/hotel-html-template-pro"
                   style={{ zIndex: 2, marginLeft: "auto", marginRight: 10 }}
@@ -165,11 +165,10 @@ function Header() {
                   }}
                 >
                   Disconnect
-                  {/* <i className="fa fa-arrow-right ms-3" /> */}
                 </div>
-              )}
+              )} */}
 
-              {walletClient ? (
+              {/* {walletClient ? (
                 <div
                   style={{
                     zIndex: 2,
@@ -188,9 +187,8 @@ function Header() {
                   onClick={connectWallet}
                 >
                   Connect wallet
-                  {/* <i className="fa fa-arrow-right ms-3" /> */}
                 </div>
-              )}
+              )} */}
             </div>
           </nav>
         </div>

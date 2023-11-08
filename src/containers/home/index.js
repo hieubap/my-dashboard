@@ -27,52 +27,52 @@ function Home() {
     }
   };
   const onSubmit = () => {
-    console.log("Submit");
-    Web3.contract.users(dataWallet.account.address).then((res) => {
-      console.log(res, "res???");
-      if (res.publicKey) {
-        Web3.contract
-          .requestCId(selectData.hash, res.publicKey)
-          .then((res) => {
-            LoadingRef.current(true);
-            return res.wait();
-          })
-          .then(() => {
-            ConfirmRef.current({
-              title: "Successfull",
-              content: "Request successfull",
-            });
-            Web3.contract.getRequestSended().then((res) => {
-              setRequested(res);
-            });
-          })
-          .finally(() => {
-            LoadingRef.current(false);
-          });
-      } else {
-        ErrorRef.current(
-          "You have not registered an account, please disconnect and register"
-        );
-      }
-    });
+    // console.log("Submit");
+    // Web3.contract.users(dataWallet.account.address).then((res) => {
+    //   console.log(res, "res???");
+    //   if (res.publicKey) {
+    //     Web3.contract
+    //       .requestCId(selectData.hash, res.publicKey)
+    //       .then((res) => {
+    //         LoadingRef.current(true);
+    //         return res.wait();
+    //       })
+    //       .then(() => {
+    //         ConfirmRef.current({
+    //           title: "Successfull",
+    //           content: "Request successfull",
+    //         });
+    //         Web3.contract.getRequestSended().then((res) => {
+    //           setRequested(res);
+    //         });
+    //       })
+    //       .finally(() => {
+    //         LoadingRef.current(false);
+    //       });
+    //   } else {
+    //     ErrorRef.current(
+    //       "You have not registered an account, please disconnect and register"
+    //     );
+    //   }
+    // });
 
-    setSelectData(false);
+    // setSelectData(false);
   };
   console.log(requested, "requetsd");
   useEffect(() => {
-    if (dataWallet && Web3.contract) {
-      Web3.contract.getRequestSended().then((res) => {
-        setRequested(res);
-      });
-      Web3.contract.metadataByOwner().then((ownerMetadata) => {
-        setMetadatas(ownerMetadata);
-      });
-    }
+    // if (dataWallet && Web3.contract) {
+    //   Web3.contract.getRequestSended().then((res) => {
+    //     setRequested(res);
+    //   });
+    //   Web3.contract.metadataByOwner().then((ownerMetadata) => {
+    //     setMetadatas(ownerMetadata);
+    //   });
+    // }
   }, [!!dataWallet]);
   useEffect(() => {
-    getAll().then((res) => {
-      setData(res.data);
-    });
+    // getAll().then((res) => {
+    //   setData(res.data);
+    // });
   }, []);
 
   const dataCustom = useMemo(() => {
@@ -108,7 +108,7 @@ function Home() {
         <div className="container">
           <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
             <h6 className="section-title text-center text-primary text-uppercase">
-              Data marketplace
+              Dashboard
             </h6>
             <h1 className="mb-5">
               Share, Connect{" "}

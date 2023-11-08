@@ -1,10 +1,5 @@
 /* global BigInt */
-
-import "antd/dist/antd.min.css";
-import "./containers/css/style.css";
-import "./containers/css/bootstrap.min.css";
-import "./index.scss";
-import "mainam-react-native-string-utils";
+import "./__global";
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import ellip from "elliptic";

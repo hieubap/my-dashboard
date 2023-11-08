@@ -21,5 +21,5 @@ export const wagmiConfig = createConfig({
 export const ethereumClient = new EthereumClient(wagmiConfig, chains);
 export const rpcUrl = "";
 
-export const API = "http://localhost:8085";
+export const API = "http://localhost:8000";
 export const ADDRESS_CONTRACT = "0x2F498A1b1f7e5f30C48DBFc75eAdc2712C97BED1";

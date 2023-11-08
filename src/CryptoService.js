@@ -6,6 +6,7 @@ import * as secp from "@noble/secp256k1";
 import { hmac } from "@noble/hashes/hmac";
 import { sha256 } from "@noble/hashes/sha256";
 import { ethers } from "ethers";
+import BigInt from "bignumber.js";
 
 const EC = ellip.ec;
 class CryptoService {

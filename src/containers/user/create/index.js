@@ -6,6 +6,7 @@ import { Web3 } from "@src/web3";
 import { Checkbox, Collapse } from "antd";
 import { createHash } from "crypto-browserify";
 import React, { useRef, useState } from "react";
+import { useHistory } from "react-router-dom";
 import { useWalletClient } from "wagmi";
 
 export const listGroup = [
@@ -62,6 +63,7 @@ function CreateRecord() {
     ketQua: [],
     cdha: [],
   }).current;
+  const history = useHistory();
 
   return (
     <div className="container-xxl py-3">

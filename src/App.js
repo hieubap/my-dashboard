@@ -34,7 +34,7 @@ function App() {
         <Route path="/user/detail/:id" component={Detail}></Route>
         <Route path="/user/create-record" component={CreateRecord}></Route>
         <Route path="/user/shared" component={DoctorManager}></Route>
-        <Route path="/user/request" component={Request}></Route>
+        <Route path="/user/random" component={Request}></Route>
         <Route path="/user/response" component={Response}></Route>
         <Route path="/user/granted" component={Granted}></Route>
         <Route path="/user/patient/:id" component={PatientPatient}></Route>

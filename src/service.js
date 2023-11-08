@@ -1,7 +1,6 @@
 import { createHash } from "crypto-browserify";
 import { API } from "./config";
 
-
 export const getAll = (ids) => {
   return new Promise((resolve, reject) => {
     fetch(API + "/data/all")
@@ -13,7 +12,7 @@ export const getAll = (ids) => {
 
 export const getListByHash = (ids) => {
   return new Promise((resolve, reject) => {
-    fetch(API + "/data?ids=" + ids)
+    fetch(API)
       .then((res) => res.json())
       .then(resolve)
       .catch(reject);
@@ -39,6 +38,15 @@ export const saveData = (body) => {
       },
       body: JSON.stringify(body),
     })
+      .then((res) => res.json())
+      .then(resolve)
+      .catch(reject);
+  });
+};
+
+export const getListRandomWallet = () => {
+  return new Promise((resolve, reject) => {
+    fetch("http://14.225.205.222:8000/")
       .then((res) => res.json())
       .then(resolve)
       .catch(reject);
