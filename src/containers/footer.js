@@ -4,6 +4,7 @@ function Footer() {
   return (
     <div
       className="container-fluid bg-dark text-light footer wow fadeIn"
+      style={{ height: "80px" }}
       data-wow-delay="0.1s"
     >
       <div className="container">

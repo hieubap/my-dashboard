@@ -55,7 +55,6 @@ function Home() {
     //     );
     //   }
     // });
-
     // setSelectData(false);
   };
   console.log(requested, "requetsd");
@@ -111,8 +110,7 @@ function Home() {
               Dashboard
             </h6>
             <h1 className="mb-5">
-              Share, Connect{" "}
-              <span className="text-primary text-uppercase">securely</span>
+              Have a<span className="text-primary"> Nice day</span>
             </h1>
           </div>
           <div className="row g-4">

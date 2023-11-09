@@ -19,21 +19,21 @@ const routes = [
   //   path: "/user/shared",
   //   isAuth: true,
   // },
-  // {
-  //   title: "Granted",
-  //   path: "/user/granted",
-  //   isAuth: true,
-  // },
+  {
+    title: "Granted",
+    path: "/user/granted",
+    isAuth: true,
+  },
   {
     title: "Random",
     path: "/user/random",
     isAuth: false,
   },
-  // {
-  //   title: "Response",
-  //   path: "/user/response",
-  //   isAuth: true,
-  // },
+  {
+    title: "Private Key",
+    path: "/user/convert-private-key",
+    isAuth: false,
+  },
 ];
 
 function Header() {
@@ -70,7 +70,7 @@ function Header() {
             href="index.html"
             className="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center"
           >
-            <h1 className="m-0 text-primary text-uppercase">H</h1>
+            <h1 className="m-0 text-primary">Hello</h1>
           </a>
         </div>
         <div className="col-9">

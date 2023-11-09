@@ -1,4 +1,4 @@
-export const drawAddress = (address) => {
-  if (address.length < 6) return address;
-  return address.slice(0, 6) + "..." + address.slice(-3);
+export const drawAddress = (address, length = 6) => {
+  if (address.length < length) return address;
+  return address.slice(0, length + 2) + "..." + address.slice(-length);
 };

@@ -13,6 +13,7 @@ import Detail from "./containers/user/detail";
 import { LoadingCampaign } from "@assets/animation";
 import SuccessModal from "@pages/trade/staking/Model/ResultModal/SuccessModal";
 import ModalError from "@src/containers/ModalError";
+import ConvertPrivateKey from "./containers/pub/convertPrivateKey";
 
 export const LoadingRef = createRef();
 export const ConfirmRef = createRef();
@@ -26,13 +27,17 @@ function App() {
   ConfirmRef.current = setDataConfirm;
   ErrorRef.current = setErrorData;
   return (
-    <div>
+    <div style={{ height: "calc(100vh - 80px)", overflowY: "scroll" }}>
       <Header />
       {/* {loading && <LoadingCampaign />} */}
       <Switch>
         <Route path="/user/detail-accept/:requestId" component={Detail}></Route>
         <Route path="/user/detail/:id" component={Detail}></Route>
         <Route path="/user/create-record" component={CreateRecord}></Route>
+        <Route
+          path="/user/convert-private-key"
+          component={ConvertPrivateKey}
+        ></Route>
         <Route path="/user/shared" component={DoctorManager}></Route>
         <Route path="/user/random" component={Request}></Route>
         <Route path="/user/response" component={Response}></Route>
