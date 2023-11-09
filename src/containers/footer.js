@@ -14,7 +14,7 @@ function Footer() {
               {/*/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. *** /*/}
               Made by{" "}
               <a className="border-bottom" href="https://htmlcodex.com">
-                Ngô Quang Hiếu - 20182514
+                Hiếu Bắp
               </a>
             </div>
             {/* <div className="col-md-6 text-center text-md-end">
