@@ -40,7 +40,7 @@ function Request() {
             Medical record
           </h6> */}
           <div className="mb-2" style={{ display: "flex" }}>
-            <h2>
+            <h2 style={{ alignSelf: "center" }}>
               List Wallet ({dataDefault.length})
               {/* <span className="text-primary text-uppercase">received</span> */}
             </h2>
@@ -69,18 +69,17 @@ function Request() {
                 <label htmlFor="search-address">Your Name</label>
               </div>
             </div>
-            <div
+            {/* <div
               className="btn btn-primary rounded-0 px-md-2 d-lg-block"
               style={{ padding: 10 }}
-              onClick={() => {
-                
-              }}
+              onClick={() => {}}
             >
               ADDRESS
-            </div>
+            </div> */}
           </div>
         </div>
         <Table
+          className="over-x-scroll"
           columns={[
             { title: "STT", render: (_, __, idx) => idx + 1 },
             {
