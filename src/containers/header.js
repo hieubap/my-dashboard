@@ -19,11 +19,11 @@ const routes = [
   //   path: "/user/shared",
   //   isAuth: true,
   // },
-  {
-    title: "Granted",
-    path: "/user/granted",
-    isAuth: true,
-  },
+  // {
+  //   title: "Granted",
+  //   path: "/user/granted",
+  //   isAuth: true,
+  // },
   {
     title: "Random",
     path: "/user/random",

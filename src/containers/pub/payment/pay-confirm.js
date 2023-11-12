@@ -34,7 +34,7 @@ function ConfirmPay() {
       accountName: bankInfo.accountName,
       acqId: bankInfo.acqId,
       //   amount: 5000,
-      //   addInfo: "thanh toan truc tuyen",
+      addInfo: data.addInfo,
       format: "text",
       template: "qr_only",
     })
@@ -47,17 +47,19 @@ function ConfirmPay() {
       });
   };
   const interval = useRef();
-  const refreshData = () => {
+  const refreshData = (callback) => {
     fetchBillById(id).then((res) => {
       setData(res.data);
       if (res.data.status == "DONE") {
         clearInterval(interval.current);
       }
+      if (callback) {
+        callback();
+      }
     });
   };
   useEffect(() => {
-    // getQrCode();
-    refreshData();
+    refreshData(getQrCode);
     interval.current = setInterval(() => {
       refreshData();
     }, 5000);

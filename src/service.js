@@ -10,7 +10,7 @@ const getUrl = () => {
       return "https://api-gala.bapber.online";
   }
 
-  return "http://localhost:8000";
+  return "http://14.225.205.222:8000";
 };
 
 const API_URL = getUrl();
