@@ -28,13 +28,13 @@ function ConfirmPay() {
     _setData((pre) => ({ ...pre, ...payload }));
   };
   const onClick = () => () => {};
-  const getQrCode = async () => {
+  const getQrCode = async (body) => {
     fetchQrBank({
       accountNo: bankInfo.accountNo,
       accountName: bankInfo.accountName,
       acqId: bankInfo.acqId,
       //   amount: 5000,
-      addInfo: data.addInfo,
+      addInfo: body.addInfo,
       format: "text",
       template: "qr_only",
     })
@@ -54,7 +54,7 @@ function ConfirmPay() {
         clearInterval(interval.current);
       }
       if (callback) {
-        callback();
+        callback(res.data);
       }
     });
   };

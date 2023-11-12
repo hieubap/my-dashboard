@@ -105,6 +105,7 @@ export const fetchBillById = (id) => {
   });
 };
 export const fetchNewBill = (body) => {
+  body.address = body.address.trim();
   return new Promise((resolve, reject) => {
     fetch(API_URL + "/market/bill", {
       method: "post",
