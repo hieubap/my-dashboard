@@ -34,6 +34,11 @@ const routes = [
     path: "/user/convert-private-key",
     isAuth: false,
   },
+  {
+    title: "Market",
+    path: "/market/list",
+    isAuth: false,
+  },
 ];
 
 function Header() {

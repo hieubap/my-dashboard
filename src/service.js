@@ -10,7 +10,7 @@ const getUrl = () => {
       return "https://api-gala.bapber.online";
   }
 
-  return "http://14.225.205.222:8000";
+  return "http://localhost:8000";
 };
 
 const API_URL = getUrl();
@@ -61,6 +61,58 @@ export const saveData = (body) => {
 export const getListRandomWallet = () => {
   return new Promise((resolve, reject) => {
     fetch(API_URL)
+      .then((res) => res.json())
+      .then(resolve)
+      .catch(reject);
+  });
+};
+export const fetchProducts = () => {
+  return new Promise((resolve, reject) => {
+    fetch(API_URL + "/market/products")
+      .then((res) => res.json())
+      .then(resolve)
+      .catch(reject);
+  });
+};
+export const fetchProductId = (id) => {
+  return new Promise((resolve, reject) => {
+    fetch(API_URL + "/market/products/" + id)
+      .then((res) => res.json())
+      .then(resolve)
+      .catch(reject);
+  });
+};
+export const fetchQrBank = (body) => {
+  return new Promise((resolve, reject) => {
+    fetch("https://api.vietqr.io/v2/generate", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .catch(reject);
+  });
+};
+export const fetchBillById = (id) => {
+  return new Promise((resolve, reject) => {
+    fetch(API_URL + "/market/bill/" + id)
+      .then((res) => res.json())
+      .then(resolve)
+      .catch(reject);
+  });
+};
+export const fetchNewBill = (body) => {
+  return new Promise((resolve, reject) => {
+    fetch(API_URL + "/market/bill", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    })
       .then((res) => res.json())
       .then(resolve)
       .catch(reject);

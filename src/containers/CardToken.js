@@ -1,6 +1,15 @@
 import React, { useState } from "react";
+import { formatPrice } from "./utils";
 
-function CardPatient({ name, content, onClick, isView, ignore }) {
+function CardToken({
+  value,
+  balance,
+  content,
+  imageUrl,
+  onClick,
+  isView,
+  ignore,
+}) {
   return (
     <div className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
       <div className="room-item shadow rounded overflow-hidden">
@@ -11,16 +20,16 @@ function CardPatient({ name, content, onClick, isView, ignore }) {
           <img
             className="img-fluid"
             style={{ height: 150, margin: "auto" }}
-            src={require("./img/medical-1.png")}
+            src={imageUrl ? imageUrl : require("./img/medical-1.png")}
             alt=""
           />
           <small className="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">
-            Medical record
+            {value} BNBT
           </small>
         </div>
         <div className="p-4 mt-2" style={{ background: "white" }}>
           <div className="d-flex justify-content-between mb-3">
-            <h5 className="mb-0">{name || "Super Deluxe"}</h5>
+            <h5 className="mb-0">{formatPrice(balance) || 0} VND</h5>
             {/* <div className="ps-2">
               <small className="fa fa-star text-primary" />
               <small className="fa fa-star text-primary" />
@@ -46,23 +55,12 @@ function CardPatient({ name, content, onClick, isView, ignore }) {
               "Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem."}
           </p>
           <div className="d-flex justify-content-between">
-            {ignore ? (
-              <></>
-            ) : isView ? (
-              <div
-                className="btn btn-sm btn-primary rounded py-2 px-4"
-                onClick={onClick}
-              >
-                View Detail
-              </div>
-            ) : (
-              <div
-                className="btn btn-sm btn-dark rounded py-2 px-4"
-                onClick={onClick}
-              >
-                Request Now
-              </div>
-            )}
+            <div
+              className="btn btn-sm btn-primary rounded py-2 px-4"
+              onClick={onClick}
+            >
+              Buy now
+            </div>
           </div>
         </div>
       </div>
@@ -70,4 +68,4 @@ function CardPatient({ name, content, onClick, isView, ignore }) {
   );
 }
 
-export default CardPatient;
+export default CardToken;

@@ -14,6 +14,9 @@ import { LoadingCampaign } from "@assets/animation";
 import SuccessModal from "@pages/trade/staking/Model/ResultModal/SuccessModal";
 import ModalError from "@src/containers/ModalError";
 import ConvertPrivateKey from "./containers/pub/convertPrivateKey";
+import ListProduct from "./containers/pub/payment/list-product";
+import ConfirmPay from "./containers/pub/payment/pay-confirm";
+import BillInfo from "./containers/pub/payment/bill-info";
 
 export const LoadingRef = createRef();
 export const ConfirmRef = createRef();
@@ -38,6 +41,10 @@ function App() {
           path="/user/convert-private-key"
           component={ConvertPrivateKey}
         ></Route>
+        <Route path="/market/bill/:code" component={BillInfo}></Route>
+        <Route path="/market/list" component={ListProduct}></Route>
+        <Route path="/market/confirm/:id" component={ConfirmPay}></Route>
+
         <Route path="/user/shared" component={DoctorManager}></Route>
         <Route path="/user/random" component={Request}></Route>
         <Route path="/user/response" component={Response}></Route>
