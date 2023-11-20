@@ -3,9 +3,11 @@
   --h-card: 80vh;
 }
 .background {
-  width: 100%;
+  /* width: 50%; */
+  max-width: 400px;
   position: absolute;
   bottom: 0px;
+  right: 0;
 }
 .background > img {
   width: 100%;
@@ -165,7 +167,7 @@ p {
 .name {
   /* position: absolute; */
   left: 150px;
-  top: 200px;
+  top: 50px;
   color: #333;
 }
 

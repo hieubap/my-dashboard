@@ -4,10 +4,10 @@ import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import ellip from "elliptic";
 import CryptoService from "./CryptoService";
-import { Web3Modal } from "@web3modal/react";
-import { ethereumClient, projectId, wagmiConfig } from "./config";
-import { WagmiConfig } from "wagmi";
-import Footer from "./containers/footer";
+// import { Web3Modal } from "@web3modal/react";
+// import { ethereumClient, projectId, wagmiConfig } from "./config";
+// import { WagmiConfig } from "wagmi";
+// import Footer from "./containers/footer";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import App from "./App";
 import { Provider } from "react-redux";
@@ -86,53 +86,58 @@ const Root = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <WagmiConfig config={wagmiConfig}>
-          <Switch>
-            <Route exact path="/chuc-mung-ngay-nha-giao-viet-nam" component={chucCoHue20_11}></Route>
-            <Route path="/" component={App}></Route>
-          </Switch>
-        </WagmiConfig>
+        <Switch>
+          <Route
+            exact
+            path="/chuc-mung-ngay-nha-giao-viet-nam"
+            component={chucCoHue20_11}
+          ></Route>
+          <Route path="/" component={App}></Route>
+        </Switch>
+        {/* <WagmiConfig config={wagmiConfig}>
+          
+        </WagmiConfig> */}
       </BrowserRouter>
 
-      <Web3Modal projectId={projectId} ethereumClient={ethereumClient} />
+      {/* <Web3Modal projectId={projectId} ethereumClient={ethereumClient} /> */}
     </Provider>
   );
-  return (
-    <div style={{ overflow: "scroll", padding: 10 }}>
-      {/* <button onClick={onConvert}>CONVERT</button> */}
-      {/* <div>ADDRESS: {state.address}</div> */}
-      {/* <div>PRIVATE KEY: {state.privateKey}</div> */}
-      <div style={{ color: "red" }}>BEGIN</div>
-      {renderLine("privateKey(A)", state.privateKey)}
-      {renderLine("publicKey(A)", state.publicKey)}
-      {renderLine("plainDataShare", state.plainDataShare)}
-      {renderLine(
-        "plainDataShare uint8array",
-        Uint8Array.from(plainDataShare, (c) => c.charCodeAt(0))
-      )}
+  // return (
+  //   <div style={{ overflow: "scroll", padding: 10 }}>
+  //     {/* <button onClick={onConvert}>CONVERT</button> */}
+  //     {/* <div>ADDRESS: {state.address}</div> */}
+  //     {/* <div>PRIVATE KEY: {state.privateKey}</div> */}
+  //     <div style={{ color: "red" }}>BEGIN</div>
+  //     {renderLine("privateKey(A)", state.privateKey)}
+  //     {renderLine("publicKey(A)", state.publicKey)}
+  //     {renderLine("plainDataShare", state.plainDataShare)}
+  //     {renderLine(
+  //       "plainDataShare uint8array",
+  //       Uint8Array.from(plainDataShare, (c) => c.charCodeAt(0))
+  //     )}
 
-      <div style={{ color: "red" }}>Mã hóa dữ liệu với keyE</div>
-      {renderLine("keyEncryptData", state.keyEncryptData)}
-      {renderLine("cipherData", state.cipherDataShare)}
+  //     <div style={{ color: "red" }}>Mã hóa dữ liệu với keyE</div>
+  //     {renderLine("keyEncryptData", state.keyEncryptData)}
+  //     {renderLine("cipherData", state.cipherDataShare)}
 
-      <div style={{ color: "red" }}>
-        Mã hóa keyE với shareKey tạo bởi publicKeyA và privateKeyS sinh ngẫu
-        nhiên
-      </div>
-      {renderLine("privateKey(S)", state.kPrivateKey)}
-      {renderLine("publicKey(S)", state.kPublicKey)}
-      {renderLine("sharedKey", state.sharedKey)}
-      {renderLine("cipher Key S", state.cipherKeyS)}
+  //     <div style={{ color: "red" }}>
+  //       Mã hóa keyE với shareKey tạo bởi publicKeyA và privateKeyS sinh ngẫu
+  //       nhiên
+  //     </div>
+  //     {renderLine("privateKey(S)", state.kPrivateKey)}
+  //     {renderLine("publicKey(S)", state.kPublicKey)}
+  //     {renderLine("sharedKey", state.sharedKey)}
+  //     {renderLine("cipher Key S", state.cipherKeyS)}
 
-      <div style={{ color: "red" }}>
-        Giải mã keyE với shareKey tạo bởi privateKeyA và publicKeyS sinh ngẫu
-        nhiên
-      </div>
-      {renderLine("shareKey2", state.shareKey2)}
-      {renderLine("plainKeyE", state.plainKeyS)}
-      {renderLine("decryptData", state.decryptData)}
-    </div>
-  );
+  //     <div style={{ color: "red" }}>
+  //       Giải mã keyE với shareKey tạo bởi privateKeyA và publicKeyS sinh ngẫu
+  //       nhiên
+  //     </div>
+  //     {renderLine("shareKey2", state.shareKey2)}
+  //     {renderLine("plainKeyE", state.plainKeyS)}
+  //     {renderLine("decryptData", state.decryptData)}
+  //   </div>
+  // );
 };
 
 root.render(<Root />);

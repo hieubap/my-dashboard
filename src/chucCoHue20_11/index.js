@@ -47,25 +47,27 @@ export default () => {
           </div>
         </div>
         <div className="cardInside">
-          <h3 className="back">Kính gửi cô Tạ Thị Kim Huệ,</h3>
-          <p style={{ marginBottom: 5, fontSize }}>
+          <h3 className="back">Kính gửi cô Tạ Thị Kim Huệ</h3>
+          <p style={{ marginBottom: 15, fontSize }}>
             Nhân dịp Ngày Nhà giáo Việt Nam 20/11
           </p>
-          <p style={{ marginTop: 5, fontSize }}>
-            Em xin gửi đến cô lời chúc mừng chân thành và sâu sắc nhất. Cô Huệ
-            là một người giáo viên và sếp tuyệt vời. Cô luôn tận tâm, nhiệt
-            huyết với nghề, luôn truyền cho chúng em những kiến thức quý giá,
-            bồi dưỡng nhân cách, giúp chúng em trở thành những người có ích cho
-            xã hội. Cô là một người sếp tâm lý, luôn quan tâm đến đời sống của
-            nhân viên. Cô luôn tạo điều kiện cho chúng em phát huy hết khả năng
-            của mình. Em xin chân thành cảm ơn cô vì những hy sinh và cống hiến
-            cao cả. Chúc cô luôn dồi dào sức khỏe, hạnh phúc, tiếp tục dìu dắt
-            những thế hệ học trò thành người, tiếp tục phát triển công ty ngày
-            càng vững mạnh. Kính chúc cô 20/11 vui vẻ, tràn ngập yêu thương và
-            hạnh phúc!
+          <p style={{ marginTop: 5, marginBottom: 5, fontSize }}>
+            Với tất cả kỹ năng mà chúng em có😄 Chúng em xin làm tấm thiệp
+            online này để gửi đến cô lời chúc mừng chân thành và sâu sắc nhất🤣.
+            Cô là một giáo viên và là một người sếp 💖💖💖TUYỆT VỜI💖💖💖. Cô
+            luôn tận tâm, nhiệt huyết và là người lái đò đã đưa chúng em cập bến
+            thành công⛴🛳🛥. Cô luôn tạo điều kiện cho chúng em phát huy hết khả
+            năng của mình. Em xin chân thành cảm ơn cô vì những hy sinh🥺 và
+            cống hiến cao cả 🥹🥹🥹. 💝💝💝Chúng em kính chúc cô 20/11 thật nhiều
+            niềm vui😁, hạnh phúc💕,luôn dồi dào sức khỏe💪 để tiếp tục dìu dắt
+            các thế hệ học trò và chúc công ty đạt được nhiều thành công 🎉🎉🎉
           </p>
-          <p className="name" style={{ fontSize }}>
-            <strong>Học sinh của cô: Tuấn & Hiếu & Hưng & Sơn</strong>
+          <p
+            className="name"
+            style={{ fontSize, marginTop: 15, textAlign: "end" }}
+          >
+            <div>Học trò của cô</div>
+            <strong>🧑‍🎓Tuấn & Hiếu & Hưng & Sơn🧑‍🎓</strong>
           </p>
         </div>
       </div>

@@ -1,13 +1,13 @@
-import { useWeb3Modal } from "@web3modal/react";
+// import { useWeb3Modal } from "@web3modal/react";
 import { ethers } from "ethers";
 import React, { useEffect } from "react";
-import { useWalletClient } from "wagmi";
+// import { useWalletClient } from "wagmi";
 import { drawAddress } from "./utils";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { disconnect as disconnectWeb3 } from "@wagmi/core";
-import { initWeb3 } from "@src/web3";
+// import { initWeb3 } from "@src/web3";
 
 const routes = [
   {
@@ -42,31 +42,31 @@ const routes = [
 ];
 
 function Header() {
-  const { data: walletClient } = useWalletClient();
-  const { open } = useWeb3Modal();
+  // const { data: walletClient } = useWalletClient();
+  // const { open } = useWeb3Modal();
   const { updateData } = useDispatch().application;
   const history = useHistory();
-  const connectWallet = () => {
-    open();
-    // const web3Provider = new ethers.providers.Web3Provider(walletClient);
-    // web3Provider.getNetwork().then((network) => {});
-  };
-  useEffect(() => {
-    // if (walletClient) {
-    //   initWeb3(walletClient);
-    //   updateData({ account: walletClient });
-    // }
-    // if (
-    //   !walletClient &&
-    //   routes
-    //     .filter((i) => i.isAuth)
-    //     .map((i) => i.path)
-    //     .includes(window.location.pathname)
-    // ) {
-    //   window.location.href = "/";
-    // }
-  }, [walletClient]);
-  console.log(walletClient, "walletClient?");
+  // const connectWallet = () => {
+  //   open();
+  //   // const web3Provider = new ethers.providers.Web3Provider(walletClient);
+  //   // web3Provider.getNetwork().then((network) => {});
+  // };
+  // useEffect(() => {
+  //   // if (walletClient) {
+  //   //   initWeb3(walletClient);
+  //   //   updateData({ account: walletClient });
+  //   // }
+  //   // if (
+  //   //   !walletClient &&
+  //   //   routes
+  //   //     .filter((i) => i.isAuth)
+  //   //     .map((i) => i.path)
+  //   //     .includes(window.location.pathname)
+  //   // ) {
+  //   //   window.location.href = "/";
+  //   // }
+  // }, [walletClient]);
+  // console.log(walletClient, "walletClient?");
   return (
     <div className="container-fluid bg-dark px-0">
       <div className="row gx-0">
@@ -96,7 +96,7 @@ function Header() {
               id="navbarCollapse"
             >
               <div style={{ zIndex: 2 }} className="navbar-nav mr-auto py-0">
-                {routes
+                {/* {routes
                   .filter(
                     (i) =>
                       !i.isAuth ||
@@ -112,7 +112,7 @@ function Header() {
                     >
                       {i.title}
                     </Link>
-                  ))}
+                  ))} */}
                 {/* <Link to="collected" className="nav-item nav-link">
                   Collected
                 </Link> */}
@@ -146,7 +146,7 @@ function Header() {
                   Contact
                 </a> */}
               </div>
-              {!walletClient && window.location.pathname != "/register" && (
+              {/* {!walletClient && window.location.pathname != "/register" && (
                 <div
                   //   href="https://htmlcodex.com/hotel-html-template-pro"
                   style={{ zIndex: 2, marginLeft: "auto", marginRight: 10 }}
@@ -156,9 +156,9 @@ function Header() {
                   }}
                 >
                   Register
-                  {/* <i className="fa fa-arrow-right ms-3" /> */}
+                  <i className="fa fa-arrow-right ms-3" />
                 </div>
-              )}
+              )} */}
               {/* {walletClient && (
                 <div
                   //   href="https://htmlcodex.com/hotel-html-template-pro"
