@@ -7,6 +7,9 @@ export default () => {
   const refTimeout = useRef();
 
   useEffect(() => {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    setFontSize(width > height ? "3vh" : "3.5vw");
     window.addEventListener("resize", function () {
       this.clearTimeout(refTimeout.current);
       refTimeout.current = this.setTimeout(() => {
