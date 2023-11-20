@@ -17,6 +17,7 @@ import ConvertPrivateKey from "./containers/pub/convertPrivateKey";
 import ListProduct from "./containers/pub/payment/list-product";
 import ConfirmPay from "./containers/pub/payment/pay-confirm";
 import BillInfo from "./containers/pub/payment/bill-info";
+import Footer from "./containers/footer";
 
 export const LoadingRef = createRef();
 export const ConfirmRef = createRef();
@@ -53,6 +54,7 @@ function App() {
         <Route path="/register" component={Register} exact={true}></Route>
         <Route path="/" component={Home}></Route>
       </Switch>
+      <Footer />
       {loading && (
         <div
           style={{

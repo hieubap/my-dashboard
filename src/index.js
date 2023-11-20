@@ -12,6 +12,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import App from "./App";
 import { Provider } from "react-redux";
 import store from "./redux";
+import chucCoHue20_11 from "./chucCoHue20_11";
 
 const EC = ellip.ec;
 const root = createRoot(document.getElementById("root"));
@@ -87,9 +88,9 @@ const Root = () => {
       <BrowserRouter>
         <WagmiConfig config={wagmiConfig}>
           <Switch>
+            <Route exact path="/chuc-mung-ngay-nha-giao-viet-nam" component={chucCoHue20_11}></Route>
             <Route path="/" component={App}></Route>
           </Switch>
-          <Footer />
         </WagmiConfig>
       </BrowserRouter>
 
