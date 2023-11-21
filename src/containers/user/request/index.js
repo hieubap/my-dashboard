@@ -82,10 +82,10 @@ function Random() {
               title: "Address",
               dataIndex: "address",
             },
-            {
-              title: "Private key",
-              dataIndex: "privateKey",
-            },
+            // {
+            //   title: "Private key",
+            //   dataIndex: "privateKey",
+            // },
           ]}
           dataSource={data}
         ></Table>
