@@ -1,17 +1,17 @@
 import React, { useEffect, useMemo, useState } from "react";
 import CardPatient from "../CardPatient";
 // import SuccessModal from "@containers/SuccessModal";
-import { useWalletClient } from "wagmi";
-import { getAll } from "@src/service";
-import { useWeb3Modal } from "@web3modal/react";
-import { Web3 } from "@src/web3";
-import { LoadingCampaign } from "@assets/animation";
-import { ConfirmRef, ErrorRef, LoadingRef } from "@src/App";
+// import { useWalletClient } from "wagmi";
+// import { getAll } from "@src/service";
+// import { useWeb3Modal } from "@web3modal/react";
+// import { Web3 } from "@src/web3";
+// import { LoadingCampaign } from "@assets/animation";
+// import { ConfirmRef, ErrorRef, LoadingRef } from "@src/App";
 import SuccessModal from "../SuccessModal";
 
 function Home() {
-  const { data: dataWallet } = useWalletClient();
-  const { open } = useWeb3Modal();
+  // const { data: dataWallet } = useWalletClient();
+  // const { open } = useWeb3Modal();
   const [selectData, setSelectData] = useState(false);
   const [data, setData] = useState([]);
   const [requested, setRequested] = useState([]);
@@ -19,13 +19,13 @@ function Home() {
 
   console.log(requested);
 
-  const onClick = (item) => () => {
-    if (dataWallet) {
-      setSelectData(item);
-    } else {
-      open();
-    }
-  };
+  // const onClick = (item) => () => {
+  //   if (dataWallet) {
+  //     setSelectData(item);
+  //   } else {
+  //     open();
+  //   }
+  // };
   const onSubmit = () => {
     // console.log("Submit");
     // Web3.contract.users(dataWallet.account.address).then((res) => {
@@ -58,16 +58,16 @@ function Home() {
     // setSelectData(false);
   };
   console.log(requested, "requetsd");
-  useEffect(() => {
-    // if (dataWallet && Web3.contract) {
-    //   Web3.contract.getRequestSended().then((res) => {
-    //     setRequested(res);
-    //   });
-    //   Web3.contract.metadataByOwner().then((ownerMetadata) => {
-    //     setMetadatas(ownerMetadata);
-    //   });
-    // }
-  }, [!!dataWallet]);
+  // useEffect(() => {
+  //   // if (dataWallet && Web3.contract) {
+  //   //   Web3.contract.getRequestSended().then((res) => {
+  //   //     setRequested(res);
+  //   //   });
+  //   //   Web3.contract.metadataByOwner().then((ownerMetadata) => {
+  //   //     setMetadatas(ownerMetadata);
+  //   //   });
+  //   // }
+  // }, [!!dataWallet]);
   useEffect(() => {
     // getAll().then((res) => {
     //   setData(res.data);
@@ -113,7 +113,7 @@ function Home() {
               Have a<span className="text-primary"> Nice day</span>
             </h1>
           </div>
-          <div className="row g-4">
+          {/* <div className="row g-4">
             {dataCustom && dataCustom.length ? (
               dataCustom.map((item, idx) => (
                 <CardPatient
@@ -125,7 +125,7 @@ function Home() {
             ) : (
               <div style={{ textAlign: "center" }}>No data</div>
             )}
-          </div>
+          </div> */}
         </div>
       </div>
 

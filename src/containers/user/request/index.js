@@ -1,18 +1,9 @@
-import SuccessModal from "@pages/trade/staking/Model/ResultModal/SuccessModal";
-import { ConfirmRef, LoadingRef } from "@src/App";
-import CryptoService from "@src/CryptoService";
-import { drawAddress } from "@src/containers/utils";
-import { getListByHash, getListRandomWallet } from "@src/service";
-import { Web3 } from "@src/web3";
-import { Badge, Button, Table } from "antd";
-import { ethers } from "ethers";
-import moment from "moment";
+import { getListRandomWallet } from "@src/service";
+import { Table } from "antd";
 import React, { useEffect, useState } from "react";
-import { useWalletClient } from "wagmi";
 import { Container } from "./style";
 
-function Request() {
-  const { data: walletClient } = useWalletClient();
+function Random() {
   const [data, setData] = useState([]);
   const [dataDefault, setDataDefault] = useState([]);
   const getMetadatas = async () => {
@@ -103,4 +94,4 @@ function Request() {
   );
 }
 
-export default Request;
+export default Random;

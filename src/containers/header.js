@@ -6,7 +6,7 @@ import { drawAddress } from "./utils";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { disconnect as disconnectWeb3 } from "@wagmi/core";
+// import { disconnect as disconnectWeb3 } from "@wagmi/core";
 // import { initWeb3 } from "@src/web3";
 
 const routes = [
@@ -96,12 +96,12 @@ function Header() {
               id="navbarCollapse"
             >
               <div style={{ zIndex: 2 }} className="navbar-nav mr-auto py-0">
-                {/* {routes
-                  .filter(
-                    (i) =>
-                      !i.isAuth ||
-                      (walletClient && window.location.pathname != "/register")
-                  )
+                {routes
+                  // .filter(
+                  //   (i) =>
+                  //     !i.isAuth ||
+                  //     (walletClient && window.location.pathname != "/register")
+                  // )
                   .map((i, idx) => (
                     <Link
                       to={i.path}
@@ -112,7 +112,7 @@ function Header() {
                     >
                       {i.title}
                     </Link>
-                  ))} */}
+                  ))}
                 {/* <Link to="collected" className="nav-item nav-link">
                   Collected
                 </Link> */}

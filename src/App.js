@@ -7,7 +7,7 @@ import Register from "./containers/register";
 import Home from "./containers/home";
 import CreateRecord from "./containers/user/create";
 import Granted from "./containers/user/granted";
-import Request from "./containers/user/request";
+import Random from "./containers/user/request";
 import Response from "./containers/user/response";
 import Detail from "./containers/user/detail";
 import { LoadingCampaign } from "@assets/animation";
@@ -47,7 +47,7 @@ function App() {
         <Route path="/market/confirm/:id" component={ConfirmPay}></Route>
 
         <Route path="/user/shared" component={DoctorManager}></Route>
-        <Route path="/user/random" component={Request}></Route>
+        <Route path="/user/random" component={Random}></Route>
         <Route path="/user/response" component={Response}></Route>
         <Route path="/user/granted" component={Granted}></Route>
         <Route path="/user/patient/:id" component={PatientPatient}></Route>
